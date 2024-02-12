@@ -21,7 +21,6 @@ if you are unfamiliar with Python, I suggest you download PyCharm and download t
 - Select the image you want for the picture folder
 - Adjust the position of the image using the trackbar on top (alternatively, you can use cv2.resize if you don't mind stretching the image)
 - Press q
-- May have to spam q
 - It should be done!
 
 ## Extra Note
