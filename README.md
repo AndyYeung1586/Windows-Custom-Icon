@@ -11,8 +11,8 @@ and it works in all sizes from extra large, ![image](https://github.com/AndyYeun
 I hope you find this script useful.
 
 ## Requirement
-Python 3.xx
-Open-CV
+- Python 3.xx
+- Open-CV
 
 if you are unfamiliar with Python, I suggest you download PyCharm and download the opencv-python library from its built-in package management.
 
