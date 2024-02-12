@@ -54,7 +54,6 @@ def square(path):
 
         # show cropped image
         cv2.imshow(winname, img_cropped)
-        cv2.waitKey(300)
 
         # end loop
         if cv2.waitKey(100) == ord('q'):
