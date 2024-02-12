@@ -1,5 +1,5 @@
 # Windows-Custom-Icon
-a Python script to implement a custom folder icon for your photo album
+A Python script to implement a custom folder icon for your picture folders
 
 Tired of seeing a half-opened picture folder icon blocking half of the image in File Explorer? Well, this script is just for you! This script will replace the half open picture folder icon with whatever image you selected. Just make sure the image is in the desired folder!
 
