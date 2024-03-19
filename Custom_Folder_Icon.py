@@ -1,10 +1,11 @@
 import cv2
 import os
+import numpy as np
 from tkinter.filedialog import askopenfilename
 
 
 def main():
-    file_path = askopenfilename(initialdir=os.curdir)
+    file_path = askopenfilename()
     folder_path = os.path.dirname(file_path)
 
     parameter1 = f'temp_img.jpg'
@@ -26,8 +27,17 @@ def main():
 
 
 def square(path):
-    img = cv2.imread(path)
-    row, col, chn = img.shape
+    # for Unicode compatibility; imread does not work
+    stream = open(path, "rb")
+    bytes_stream = bytearray(stream.read())
+    nparray = np.asarray(bytes_stream, dtype=np.uint8)
+    img = cv2.imdecode(nparray, cv2.IMREAD_UNCHANGED)
+
+    # get image size information
+    try:
+        row, col, chn = img.shape
+    except:
+        row, col = img.shape
 
     # if the image is square, return
     if row == col:
@@ -67,7 +77,7 @@ def k(x):
 
 
 def change_folder_icon(folder_path, icon_path):
-    # Create or update the desktop.ini file
+    # create or update the desktop.ini file
     ini_path = os.path.join(folder_path, 'desktop.ini')
 
     # clear previous .ini file
@@ -75,10 +85,10 @@ def change_folder_icon(folder_path, icon_path):
         os.remove(ini_path)
 
     # apply new icon to folder
-    with open(ini_path, 'w') as f:
+    with open(ini_path, 'w', encoding="utf-8") as f:
         f.write('[.ShellClassInfo]\r\n')
-        f.write(f'IconResource={icon_path}\r\n')
-        f.write(f'IconFile={icon_path}\r\n')
+        f.write(f'IconResource=icon.ico\r\n')
+        f.write(f'IconFile=icon.ico\r\n')
         f.write('IconIndex=0\r\n')
         f.write('ConfirmFileOp=0\r\n')
         f.write('[ViewState]\r\n')
