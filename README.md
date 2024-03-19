@@ -12,20 +12,20 @@ I hope you find this script useful.
 
 ## Requirement
 - Python 3.xx
-- Open-CV
+- Open-CV library
 
-if you are unfamiliar with Python, I suggest you download PyCharm and download the opencv-python library from its built-in package management.
+if you are unfamiliar with Python, PyCharm can be used to download the opencv-python library from its built-in package management.
 
 ## Usage
 - run the Python Script
-- Select the image you want for the picture folder
-- Adjust the position of the image using the trackbar on top (alternatively, you can use cv2.resize if you don't mind stretching the image)
+- Select the desired image for the folder icon
+- Adjust the position of the image using the trackbar (alternatively, cv2.resize can be used to stretch the image to fit the icon)
 - Press q
 - It should be done!
 
 ## Extra Note
-If you want to use another image for the icon, you can simply run the script again as it will override it. That said, it will take File Explorer an unspecified amount of time before it redates the icon. I would personally want to know why that is the case but oh well. 
+To use another image for the icon, simply run the script again as it will override it.
 
-If you want to restore defaults, go to the folder's properties. It is under the Customize tab.
+To restore defaults, go to the Customize tab under the folder's properties.
 
-If you want to modify desktop.ini or icon.ico for whatever reason, use the command ``` attrib -s -h "C:\Users\path\to\the\folder\desktop.ini" ``` in your windows cmd.
+To modify the desktop.ini or icon.ico, use the command ```attrib -s -h "C:\Users\path\to\the\folder\desktop.ini" ``` in your Windows cmd.
